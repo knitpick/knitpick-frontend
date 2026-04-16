@@ -18,7 +18,7 @@ screenElement.addEventListener("click", async () => {
             noise += String.fromCharCode(Math.random() * 26 + 97);
         if(displayLength < message.length)
             displayLength++;
-        else if(counter < message.length)
+        else if(counter < message.length - 1)
             counter++;
         headerElement.innerHTML = `<span class="letter-gradient">${message.slice(0, counter)}${noise}</span>`;
     }
@@ -29,18 +29,10 @@ screenElement.addEventListener("click", async () => {
     await wait(2600); 
     skipElement.classList.remove("hidden");
     skipElement.classList.add("fade-in");
-    message = "your team deserves better...";
-    headerElement.innerHTML = `<header class="landing-header fade-in"><span class="landing-contents">${message}</span></header>`;
-    await wait(2000);
-    headerElement.classList.add("fade-out");
-    await wait(2000);
-    headerElement.classList.remove("fade-out");
     message = "we add a layer between the author and the reviewer";
     headerElement.innerHTML = `<header class="landing-header fade-in"><span class="landing-contents">${message}</span></header>`;
     await wait(2000);
     headerElement.classList.add("fade-out");
     await wait(2000);
-    headerElement.classList.remove("fade-out");
-    message = "[ sign-up ]";
-    headerElement.innerHTML = `<header class="landing-header fade-in"><a class="landing-contents" href="home">${message}</a></header>`;
+    window.location.href = "pages/home.html"; 
 })
