@@ -1,3 +1,7 @@
+body {
+    background: radial-gradient(circle, var(--bg-main) 0%, var(--bg-secondary) 100%) !important;
+}
+
 main {
     height: 100vh;
     width: 100vw;
@@ -5,6 +9,7 @@ main {
     align-items: center;
     justify-content: center;
     justify-self: center;
+    background: var(--bg-ambient) !important;
 }
 
 .screen-contents {
@@ -27,28 +32,8 @@ main {
     user-select: none; 
 }
 
-.screen-animations:hover {  
-    transform: scale(1.02); 
-    animation: bounce 2s linear infinite alternate;
-}
-
-.expand-screen {
-    animation: expand 4s forwards;
-    height: 110vh;
-    width: 120vw; 
-    border-radius: 0rem;
-}
-
-.fade-out {
-    animation: fadeout 2s forwards;
-}
-
-.fade-in {
-    animation: fadein 2s forwards;
-}
-
 .landing-header, .landing-header * {
-    font-size: var(--header-size);
+    font-size: var(--landing-header-size);
     font-weight: var(--header-weight);
     font-family: var(--header-font);
     text-align: center;
@@ -77,12 +62,33 @@ main {
 }
 
 .letter-gradient {
-  background-image: linear-gradient(45deg, var(--text-main), var(--text-secondary));
+  background-image: linear-gradient(45deg, var(--text-main), var(--text-main-secondary));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
+
+.screen-animations:hover {  
+    transform: scale(1.02); 
+    animation: bounce 2s linear infinite alternate;
+}
+
+.expand-screen {
+    animation: expand 4s forwards;
+    height: 100vh;
+    width: 100vw; 
+    border-radius: 0rem;
+}
+
+.fade-out {
+    animation: fadeout 2s forwards;
+}
+
+.fade-in {
+    animation: fadein 2s forwards;
+}
+
 
 @keyframes expand {
     0% { 
@@ -92,8 +98,8 @@ main {
     }
     100% { 
         border-radius: 0rem;
-        height: 110vh; 
-        width: 120vw;
+        height: 100vh; 
+        width: 100vw;
     }
 }
 

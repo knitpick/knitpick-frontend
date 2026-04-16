@@ -1,16 +1,29 @@
 :root {
     --bg-main: rgba(255, 255, 255, 1);
     --bg-secondary: rgba(248, 248, 255, 0.8);
+    --bg-select: rgba(255, 255, 255, 0.4);
     --bg-ambient: rgba(0, 0, 0, 1);
-    --outline-main: rgba(140, 140, 140, 0.8);
-    --text-main: rgba(38, 38, 255, 1);
-    --text-secondary: rgba(80, 80, 255, 1);
-    --header-size: 4rem;
-    --header-weight: bolder;
+    --outline-main: rgba(140, 140, 140, 0.1);
+    --text-header: rgba(38, 38, 255, 1);
+    --text-header-secondary: rgba(38, 38, 255, 1);
+    --text-main: rgba(33, 33, 37, 0.8);
+    --text-main-secondary: rgba(26, 26, 52, 0.8);
+    --header-size: 1rem;
+    --landing-header-size: 2rem;
+    --impact-header-size: 6rem;
+    --header-weight: 900;
     --header-font: "Jacquarda Bastarda 9", serif;
-    --text-size: 2rem;
-    --text-weight: lighter; 
-    --text-font: "Inter", sans-serif; 
+    --text-size: 1rem;
+    --text-weight: 400; 
+    --text-font: "Ingram mono", sans-serif; 
+}
+
+@font-face {
+    font-family: "Ingram Mono";
+    src: url("/assets/fonts/ingram-mono-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -25,7 +38,7 @@
 }
 
 a {
-    color: var(--text-main);
+    color: var(--text-header);
     font-weight: var(--text-weight);
     font-family: var(--text-font);
     font-optical-sizing: auto;
@@ -33,9 +46,14 @@ a {
     text-decoration: none;
 }
 
-body {
+body { 
     background: var(--bg-ambient);
     overflow: hidden;
+}
+
+main {
+    background: radial-gradient(circle, var(--bg-main) 0%, var(--bg-secondary) 100%);
+    overflow-y: auto;
 }
 
 .hidden {
@@ -45,4 +63,28 @@ body {
 
 .selectable {
     cursor: pointer;
+}
+
+.header-text-styling {
+    font-weight: var(--header-weight);
+    font-family: var(--header-font);
+}
+
+.main-text-styling { 
+    font-weight: var(--text-weight);
+    font-family: var(--text-font);
+}
+
+.align-start {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    text-align: start;
+}
+
+.align-end {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    text-align: end;
 }
