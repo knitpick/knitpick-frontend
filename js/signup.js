@@ -4,8 +4,6 @@ const usernameWarningElement = document.getElementById("username-warning");
 const passwordElement = document.getElementById("password");
 const passwordWarningElement = document.getElementById("password-warning");
 const signupInputElement = document.getElementById("signup");
-const usernameInputWarningElement = document.getElementById("username-input-warning");
-const passwordInputWarningElement = document.getElementById("password-input-warning");
 const inputWarningElement = document.getElementById("input-warning");
 
 const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -18,16 +16,33 @@ window.onload = async () => {
 
 
 signupInputElement.addEventListener("click", async () => { 
-    if(!usernameElement.value || usernameElement.value == "") {
-        usernameInvalid = true;
+    usernameWarningElement.classList.add("hidden"); 
+    passwordWarningElement.classList.add("hidden"); 
+    inputWarningElement.classList.add("hidden");
+    invalid = false;
+    if(!usernameElement.value || usernameElement.value == "") { 
+        usernameElement.classList.add("fade-in");
+        usernameElement.placeholder = "invalid email";
         usernameWarningElement.classList.remove("hidden"); 
+        usernameWarningElement.classList.add("fade-in");
         inputWarningElement.classList.remove("hidden");
-        return;
+        inputWarningElement.classList.add("fade-in"); 
+        invalid = true;
     } 
-    if(!passwordElement.value || passwordElement.value == "") {
-        passwordInvalid = true;
+    if(!passwordElement.value || passwordElement.value == "") {  
+        passwordElement.classList.add("fade-in");
+        passwordElement.placeholder = "too short";
         passwordWarningElement.classList.remove("hidden"); 
+        passwordWarningElement.classList.add("fade-in");
         inputWarningElement.classList.remove("hidden");
+        inputWarningElement.classList.add("fade-in"); 
+        invalid = true;
+    }
+    await wait(2000); 
+    if(invalid) {
+        inputWarningElement.classList.remove("fade-in")
+        usernameElement.classList.remove("fade-in"); 
+        passwordElement.classList.remove("fade-in");
         return;
     }
 })

@@ -39,6 +39,10 @@
     margin: 0;
 }
 
+input::placeholder {
+  font-size: var(--text-size);
+}
+
 a {
     color: var(--text-header);
     font-weight: var(--text-weight);
