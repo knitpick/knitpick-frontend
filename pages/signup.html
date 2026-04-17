@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <title>knitpick - pricing</title>
+        <script src="../js/signup.js" defer></script>
+        <link rel="stylesheet" href="../css/global-styles.css">
+        <link rel="stylesheet" href="../css/signup-styles.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <main id="main">
+            <div class="screen-contents" id="screen">
+                <header class="landing-header" id="header">
+                    <div class="header-container">
+                        <span class="letter-gradient align-start">
+                            <a href="home.html" class="header-link">[🞶]</a>
+                        </span>
+                        <span class="letter-gradient header-text-styling align-end">
+                            K
+                        </span>
+                    </div>
+                </header> 
+                <div class="main-contents hidden" id="main-content">
+                    <div class="main-contents-section">
+                        <span class="input-line">
+                            <span class="hidden">
+                                →
+                            </span>
+                            <input 
+                                required
+                                type="text" 
+                                id="username"  
+                                minlength="6" 
+                                maxlength="124" 
+                                placeholder="email" 
+                                pattern="\b\w+@\w+\.\w+\b"
+                                class="signup-input"
+                            />
+                            <span id="username-warning" class="warning hidden">
+                                ←
+                            </span>
+                        </span>
+                        <span class="input-line">
+                            <span class="hidden">
+                                →
+                            </span>
+                            <input 
+                                required
+                                type="password" 
+                                id="password"  
+                                minlength="8" 
+                                maxlength="64" 
+                                placeholder="password" 
+                                class="signup-input"
+                            />
+                            <span id="password-warning" class="warning hidden">
+                                ←
+                            </span>
+                        </span> 
+                        <br>
+                        <span id="signup" class="selectable input-button">signup</span>
+                        <span id="input-warning" class="input-warning hidden">
+                            invalid credentials.
+                        </span> 
+                    </div>
+                </div>
+                <div class="landing-footer hidden" id="skip-animation">
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

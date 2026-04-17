@@ -6,16 +6,17 @@
     --outline-main: rgba(140, 140, 140, 0.1);
     --text-header: rgba(38, 38, 255, 1);
     --text-header-secondary: rgba(38, 38, 255, 1);
+    --text-inverse: rgba(255, 255, 255, 0.98);
     --text-main: rgba(33, 33, 37, 0.8);
     --text-main-secondary: rgba(26, 26, 52, 0.8);
+    --warning-main: rgba(255, 38, 38, 1);
     --header-size: 1rem;
     --landing-header-size: 2rem;
-    --impact-header-size: 6rem;
     --header-weight: 900;
     --header-font: "Jacquarda Bastarda 9", serif;
     --text-size: 1rem;
     --text-weight: 400; 
-    --text-font: "Ingram mono", sans-serif; 
+    --text-font: "Ingram mono", sans-serif;
 }
 
 @font-face {
@@ -46,7 +47,7 @@ a {
     text-decoration: none;
 }
 
-body {  
+body {
     background: radial-gradient(circle, var(--bg-main) 0%, var(--bg-secondary) 100%);
     overflow: hidden;
 }
@@ -149,6 +150,7 @@ main {
     min-height: 2.6rem;
     max-height: 2.6rem; 
     margin: 0;
+    corner-shape: squircle;
     border-radius: 1rem;
 }
 
@@ -277,6 +279,13 @@ main {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+
+.input-button {
+    background: var(--outline-main);
+    corner-shape: squircle;
+    border-radius: 1rem;
+    padding: 0.2rem 0.8rem 0.2rem 0.8rem;
 }
 
 .fade-out {
